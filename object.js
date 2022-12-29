@@ -4,6 +4,8 @@ const types = {
   rock: 2,
 };
 
+const gutter = 30;
+
 const killerType = {
   [types.paper]: types.rock,
   [types.scissor]: types.paper,
@@ -32,15 +34,15 @@ class Thing {
       Math.random() * 10,
       0,
       10,
-      50,
-      canvasConfig.size.X
+      gutter,
+      canvasConfig.size.X - gutter
     );
     this.position.y = map(
       Math.random() * 10,
       0,
       10,
-      50,
-      canvasConfig.size.Y
+      gutter,
+      canvasConfig.size.Y - gutter
     );
   }
 
