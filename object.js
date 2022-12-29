@@ -33,14 +33,14 @@ class Thing {
       0,
       10,
       50,
-      canvasConfig.size.X - 50
+      canvasConfig.size.X
     );
     this.position.y = map(
       Math.random() * 10,
       0,
       10,
       50,
-      canvasConfig.size.Y - 50
+      canvasConfig.size.Y
     );
   }
 
