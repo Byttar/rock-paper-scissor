@@ -3,14 +3,14 @@ new p5();
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-const canvasHeight = urlParams.get('canvasHeight');
-const canvasWidth = urlParams.get('canvasWidth');
+const canvasHeight = urlParams.get('canvasHeight') || window.innerHeight - 10;
+const canvasWidth = urlParams.get('canvasWidth') || window.innerWidth;
 const population = urlParams.get('population');
-const disableSound = urlParams.get('disableSound');
+const enableSound = urlParams.get('enableSound');
 const volume = urlParams.get('volume');
 
-if(canvasWidth > 2000) throw new Error('Canvas width out of range')
-if(canvasHeight > 2000) throw new Error('Canvas height out of range')
+if(canvasWidth > screen.width) throw new Error('Canvas width out of range')
+if(canvasHeight > screen.height) throw new Error('Canvas height out of range')
 
 
 const canvasConfig = {
@@ -34,7 +34,7 @@ function preload() {
   sounds.rock = loadSound('./assets/sounds/stone_sound.mp3');
   sounds.paper = loadSound('./assets/sounds/paper_sound.mp3');
 
-  const currentVolume = disableSound == 'on' ? 0 : parseFloat(volume);
+  const currentVolume = enableSound == 'on' ? parseFloat(volume) : 0;
 
   console.log(volume);
 

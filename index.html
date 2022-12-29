@@ -7,6 +7,8 @@
   <link rel="shortcut icon" href="./assets/paper.png" type="image/x-icon">
   <title>Rock Paper Scissor Simulator</title>
   <style>
+    
+
     body {
       padding: 0;
       margin: 0;
@@ -22,12 +24,12 @@
       position: fixed;
       background: lightgray;
       height: 100vh;
-      width: 500px;
+      width: 300px;
       right: 0;
     }
 
     aside.hidden {
-      transform: translateX(500px);
+      transform: translateX(300px);
     }
 
     aside form {
@@ -86,8 +88,8 @@
       <input type="range" min="0" max="1" step="0.1" name="volume" placeholder="Canvas Size  (0 - 2000)"/>
 
       <label>
-        <input type="checkbox" name="disableSound"/>
-        Disable Sound
+        <input type="checkbox" name="enableSound"/>
+        Enable Sound
       </label>
       <button>Restart</button>
     </form>
